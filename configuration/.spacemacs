@@ -259,6 +259,11 @@ you should place your code here."
   (setq org-log-done 'note)
   ;;cleaner indenting
   (setq org-startup-indented t)
+
+  ;;Proper line wrapping
+
+  ;;Load and execute keybinding
+  (load-file "~/.emacs.d/keybindings.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
