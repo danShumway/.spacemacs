@@ -29,6 +29,8 @@ values."
      git
      markdown
      org
+     javascript
+     spell-checking
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -115,7 +117,7 @@ values."
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
-   dotspacemacs-emacs-leader-key "M-m"
+   dotspacemacs-emacs-leader-key "C-SPC"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
    dotspacemacs-major-mode-leader-key ","
@@ -253,18 +255,14 @@ you should place your code here."
   ;;don't wrap lines in the editor (very annoying for most code)
   (set-default 'truncate-lines t)
 
-  ;;log times when you finish a note in org-mode
-  (setq org-log-done 'time)
-  ;;log messages when you mark a task as done (might be too annoying)
-  (setq org-log-done 'note)
-  ;;cleaner indenting
-  (setq org-startup-indented t)
+  ;;turn off spell-checking by default. Most of the time you don't want this
+  (setq-default dotspacemacs-configuration-layers
+                '((spell-checking :variables spell-checking-enable-by-default nil)))
 
-  ;;Proper line wrapping
-
-  ;;Load and execute keybinding
+  ;;external customizations
+  (load-file "~/.emacs.d/org_mode.el")
   (load-file "~/.emacs.d/keybindings.el")
-  )
 
+)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
