@@ -260,8 +260,8 @@ you should place your code here."
                 '((spell-checking :variables spell-checking-enable-by-default nil)))
 
   ;;external customizations
-  (load-file "~/.emacs.d/org_mode.el")
-  (load-file "~/.emacs.d/keybindings.el")
+  (load-file "~/.emacs.d/private/org_mode.el")
+  (load-file "~/.emacs.d/private/keybindings.el")
 
 )
 ;; Do not write anything past this comment. This is where Emacs will
