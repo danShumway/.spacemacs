@@ -319,16 +319,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;;don't wrap lines in the editor (very annoying for most code)
-  (set-default 'truncate-lines t)
-
-  ;;turn off spell-checking by default. Most of the time you don't want this
-  (setq-default dotspacemacs-configuration-layers
-                '((spell-checking :variables spell-checking-enable-by-default nil)))
-
-  (setq evil-want-fine-undo t)
-
   ;;external customizations
+  (load-file "~/.emacs.d/private/base.el")
   (load-file "~/.emacs.d/private/org_mode.el")
   (load-file "~/.emacs.d/private/keybindings.el")
 
